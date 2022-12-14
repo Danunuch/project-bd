@@ -1,0 +1,68 @@
+.top-head{
+	padding: 15px 0px;
+}
+
+
+.flag {
+    display: inline-block;
+    width: 30px;
+    opacity: .4
+}
+
+.flag:hover {
+    opacity: 1
+}
+
+.active .flag {
+    opacity: 1
+}
+
+
+
+
+ul.attributes li a.box-tel{
+  display: inline-block;
+  background: #ffc83c;
+  padding: 15px;
+  color: #502c17;
+  line-height: 20px;
+}
+
+ul.attributes li a.box-tel:hover{
+    background: #502c17;
+    color: #ffffff;
+}
+
+ul.attributes li a.box-tel .material-icons-sharp{
+  font-size: 60px;
+  float: left;margin-right: 15px;
+}
+
+
+ul.attributes li a.box-tel .tel{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+/*nav .menu li a {
+    display: block;
+    padding: 40px 25px;
+    text-decoration: none;
+    color: #000
+}*/
+
+
+
+
+
+
+
+
+
+@media (min-width: 992px) {
+
+    .core-nav .wrap-core-nav-list .core-nav-list {
+        margin-right: -100px;
+    }
+}

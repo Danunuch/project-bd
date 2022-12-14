@@ -1,0 +1,97 @@
+/*
+Custom Style
+=========================== */
+nav {
+	border-bottom: solid 0px #efefef;
+	min-height: 60px;
+	background: #fff;
+}
+
+nav .wrap-core-nav-list,
+nav .nav-header {
+	background: transparent;
+}
+
+nav .brand {
+	display: block;
+	position: relative;
+	width: 215px;
+	top: 0px;
+	padding: 15px 0px;
+}
+
+nav .brand img {
+	width: 100%;
+}
+
+nav .menu li a {
+	display: block;
+	padding: 20px 25px;
+	text-decoration: none;
+	color: #000000;
+	font-weight: 400;
+}
+
+nav .menu li.active > a,
+nav .menu li a:hover {
+	color: #ffffff;
+	background: #000000;
+}
+
+nav button {
+	background: transparent;
+	border: none;
+	outline: none;
+}
+
+@media (max-width: 992px) {
+	nav .full-container,
+	nav .nav-container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	nav .nav-header {
+		min-height: 84px;
+	}
+
+	nav .nav-header .brand {
+		margin: 0 auto 5px;
+		float: none;
+		width: 125px;
+	}
+
+	nav .nav-header .toggle-bar {
+		font-size: 25px;
+		position: absolute;
+		top: 40px;
+		left: 15px;
+	}
+
+	nav .menu li a {
+		padding: 10px 10px;
+		font-size: 20px;
+		border-bottom: solid 0px #efefef;
+	}
+
+	nav .menu li:last-child a {
+		border-bottom: none;
+	}
+}
+/* =========================== */
+
+
+@media (min-width: 992px) {
+	nav .menu li a {
+   font-size: 20px;
+   margin: 12px 0px;
+}
+ul.attributes li a {
+     margin: 10px 0px;
+}
+nav.core-nav.nav-core-sticky.on-scroll .brand {
+
+    width: 125px;
+ 
+}
+}

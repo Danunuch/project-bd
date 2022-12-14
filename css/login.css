@@ -1,0 +1,58 @@
+body{
+  background-color: rgb(255, 255, 255);
+}
+#form-pos {
+  margin: 0px auto;
+  display: block;
+  text-align: center;
+  width: 400px;
+  height: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  border: 2px solid #000000;
+}
+
+img {
+  width: 100px;
+}
+
+.pos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.email {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.pass {
+  width: 100%;
+  margin: 0 auto;
+}
+
+label{
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.login{
+  width: 120px;
+  height: 40px;
+  margin: 10px auto;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: #FFFFFF;
+}
+.login:hover{
+  background-color: rgb(40, 39, 39);
+  transition: 0.2s;
+  scale: 1.05;
+}

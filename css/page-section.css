@@ -1,0 +1,147 @@
+#page-section{
+
+    padding-bottom: 100px;
+   
+}
+
+
+
+
+
+
+#page-section .page-header h2 {
+ color: #000000;
+ position: relative;
+ display: inline-block;
+ padding-bottom: 15px;
+}
+
+#page-section .page-header h2:before {
+  content: '';
+  position: absolute;
+  width: 33.33%;
+  height: 1px;
+  background: #dcab80;
+  left: 33.33%;
+  right: 33.33%;
+  bottom: 0px;
+}
+
+
+
+.bg-navigator{
+    text-align: left;
+    /*background: url(../images/pattern.png)repeat 0px 0px;*/
+    /*background-color: rgb(134, 0, 23);*/
+    font-size: 16px;
+    color: #333333;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 100px;
+
+}
+
+.bg-navigator a:nth-child(1){
+padding-right: 15px;
+padding-left: 0px;
+margin: 15px 0;
+display: inline-block;
+text-decoration: none;
+border-right: solid 1px #6f6f6f;
+color: #000000;
+font-weight: 600;
+}
+
+.bg-navigator a{
+    padding: 0px 15px;
+    display: inline-block;
+    text-decoration: none;
+    color: #6f6f6f;
+}
+
+
+
+
+#page-section .box-contact ul {
+    padding-inline-start: 25px;
+    list-style: none;
+    margin-bottom: 0px;
+}
+
+#page-section .box-contact ul li{
+   margin-bottom: 5px;
+}
+
+
+
+#page-section .box-contact ul li:before {
+   font-family: 'fontello';
+   font-weight: normal;
+   font-style: normal;
+   content: "\ed4c";
+   font-size: 18px;
+   width: 22px;
+   height: 22px;
+   text-align: center;
+   display: inline-block;
+   margin-left: -25px;
+   padding: 2px;
+   border-radius: 5px;
+   margin-right: 5px;
+   color: #dcab80;
+}
+
+
+#page-section .box-contact ul li:nth-child(1):before {
+
+    content: "";
+   
+}
+
+
+#page-section .box-contact ul li:nth-child(2):before {
+
+    content: "";
+   
+}
+
+#page-section .box-contact ul li:nth-child(3):before {
+
+    content: "";
+   
+}
+#page-section .box-contact ul li:nth-child(4):before {
+
+    content: "";
+   
+}
+
+#page-section .box-contact ul li:nth-child(5):before {
+
+    content: "";
+   
+}
+
+
+
+@media (max-width: 992px) {
+
+    #page-section{
+         padding-bottom: 50px;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+   
+
+
+
+}
+
+
+
+
+
+
