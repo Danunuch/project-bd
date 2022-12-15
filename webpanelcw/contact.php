@@ -153,7 +153,7 @@ if (isset($_POST['edit-aboutme-en'])) {
         $update_me->bindParam(":line_id", $line_id_en);
         $update_me->bindParam(":line_qr", $img_qr_en);
         $update_me->bindParam(":call_center", $call_center_en);
-        $update_me->bindParam(":email", $email_en); 
+        $update_me->bindParam(":email", $email_en);
         $update_me->execute();
 
         if ($update_me) {
@@ -190,7 +190,7 @@ if (isset($_POST['edit-aboutme-en'])) {
                     </tr>
                 </thead>
                 <tbody> <?php
-                        $i = 1;
+                        
                         if (!$row_about) {
                             echo "ยังไม่มีบทความ";
                         } else {
@@ -216,7 +216,7 @@ if (isset($_POST['edit-aboutme-en'])) {
                                 <td><?= $row_about_en['call_center']; ?></td>
                                 <td> <img width="80px" src="assets/about_me/<?= $row_about_en['line_qr']; ?>" alt="qr_code"></td>
                             </tr>
-                    <?php $i++;
+                    <?php 
                             }
                         }
                     ?>
@@ -224,7 +224,7 @@ if (isset($_POST['edit-aboutme-en'])) {
 
             </table>
         </div>
-        
+
         <div class="box-form" id="box-f">
             <div class="box-title">
                 <p class="contact-me">แก้ไขข้อมูล (ภาษาไทย)</p>
@@ -307,28 +307,35 @@ if (isset($_POST['edit-aboutme-en'])) {
                         <th scope="col">ชื่อเรื่อง</th>
                         <th scope="col">ชื่อ</th>
                         <th scope="col">อีเมล</th>
-                        <!-- <th scope="col">ข้อความ</th> -->
+                        <th scope="col">เบอร์โทรศัพท์</th>
+                        <th scope="col">ข้อความ</th>
+                        <th scope="col">จัดการ</th>
                     </tr>
                 </thead>
                 <tbody> <?php
-                        $i = 1;
+                        
                         if (!$row_message) {
                             echo "ยังไม่มีบทความ";
                         } else {
-
-                            foreach (array_reverse($row_message) as $row_message) { ?>
-                            <tr align="center">
+                            // echo "<pre>";
+                            // print_r($row_message);
+                            // echo "<pre>";
+                          
+                            foreach ($row_message as $row_message) { ?>
+                            <tr>
                                 <!-- <th scope="row"><?= $i  ?></th> -->
-                                <td><?= $row_message['title_name']; ?></td>
-                                <td><?= $row_message['name'];  ?></td>
-                                <td><?= $row_message['email'];  ?></td>
-                                <!-- <td><?= $row_message['content'];  ?></td> -->
+                                <td width="18%" align="center"><?= $row_message['title_name']; ?></td>
+                                <td width="15%" align="left"><?= $row_message['name'];  ?></td>
+                                <td width="10%" align="left"><?= $row_message['email'];  ?></td>
+                                <td width="15%"><?= $row_message['tel'];  ?></td>
+                                <td  align="left"><?= $row_message['content'];  ?></td>
                                 <td>
-                                    <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></button>
+                                    <!-- <button class="btn btn-info" data-bs-toggle="modal" data-bs-title="<?php echo $row_message["id"] ?>" data-bs-target="#myModal"><i class="bi bi-eye"></i></button> -->
                                     <a href="contact?delete_message_id=<?= $row_message["id"] ?>" onclick="return confirm('คุณต้องการลบข้อความนี้ใช่ไหม')"><button class="btn btn-danger"><i class="bi bi-trash"></i></button></a>
                                 </td>
+
                             </tr>
-                    <?php $i++;
+                    <?php 
                             }
                         }
                     ?>
@@ -370,11 +377,14 @@ if (isset($_POST['edit-aboutme-en'])) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                    <p>คุณ : <?php echo $row_message["name"] ?></p>
-                    <p>ข้อความ : <?php echo $row_message["content"] ?></p>
-                    <p>ติดต่อกลับ : <?php echo $row_message["tel"] ?></p>
+                <?php
+                foreach($count_message as $count_message) { ?>
+                    <p>คุณ : <?php echo $count_message["name"]; ?></p>
+                    <p>ข้อความ : <?php echo $count_message["content"]; ?></p>
+                    <p>ติดต่อกลับ : <?php echo $count_message["tel"]; ?></p>
+                <?php  }
+                ?>
             </div>
-
         </div>
     </div>
 </div>

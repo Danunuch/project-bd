@@ -60,7 +60,7 @@ if (isset($_GET['lang']) && $_GET['lang'] != "") {
 		$total_page = ceil($total_data / $rows);
 		$start = ($page - 1) * $rows;
 
-		$blog = $conn->prepare("SELECT * FROM blog_en LIMIT $start,6");
+		$blog = $conn->prepare("SELECT * FROM blog_en ORDER BY id DESC LIMIT $start,6");
 		$blog->execute();
 		$row_blog = $blog->fetchAll();
 	} else {
@@ -78,7 +78,7 @@ if (isset($_GET['lang']) && $_GET['lang'] != "") {
 		$total_page = ceil($total_data / $rows);
 		$start = ($page - 1) * $rows;
 
-		$blog = $conn->prepare("SELECT * FROM blog LIMIT $start,6");
+		$blog = $conn->prepare("SELECT * FROM blog ORDER BY id DESC LIMIT $start,6");
 		$blog->execute();
 		$row_blog = $blog->fetchAll();
 	}
@@ -98,7 +98,7 @@ if (isset($_GET['lang']) && $_GET['lang'] != "") {
 	$total_page = ceil($total_data / $rows);
 	$start = ($page - 1) * $rows;
 
-	$blog = $conn->prepare("SELECT * FROM blog LIMIT $start,6");
+	$blog = $conn->prepare("SELECT * FROM blog ORDER BY id DESC LIMIT $start,6");
 	$blog->execute();
 	$row_blog = $blog->fetchAll();
 }
