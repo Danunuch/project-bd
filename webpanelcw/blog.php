@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <link rel="stylesheet" href="assets/css/blog.css?v=<?php echo time(); ?>" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
@@ -125,22 +126,31 @@ if (isset($_GET['delete_blog_id']) && isset($_GET['lang'])) {
     <div class="layout-pages">
         <div class="box-title">
             <div class="box-title-add">
-                <p class="add-blog"><?php if ($_GET["lang"] == "en") {
-                                        echo 'All Blog';
-                                    } else {
-                                        echo 'บทความทั้งหมด';
-                                    } ?></p>
+                <p class="add-blog">บทความทั้งหมด</p>
                 <a href="?lang=th"><button class="btn-blog-en">TH</button></a>
                 <a href="?lang=en"><button class="btn-blog-en">EN</button></a>
-                <a <?php if ($_GET["lang"] == "en") {
-                        echo 'href="add_blog_en"';
+                <a <?php
+                    if (isset($_GET['lang'])) {
+                        if ($_GET["lang"] == "en") {
+                            echo 'href="add_blog_en"';
+                        } else {
+                            echo 'href="add_blog"';
+                        }
                     } else {
                         echo 'href="add_blog"';
-                    } ?>><button class="btn-add-blog"><i class="bi bi-plus"></i> <?php if ($_GET["lang"] == "en") {
-                                                                                        echo 'Add Blog';
-                                                                                    } else {
-                                                                                        echo 'เพิ่มบทความ';
-                                                                                    } ?> </button></a>
+                    }
+                    ?>>
+                    <button class="btn-add-blog"><i class="bi bi-plus"></i> <?php
+                        if (isset($_GET['lang'])) {
+                            if ($_GET["lang"] == "en") {
+                                echo 'Add Blog';
+                            } else {
+                                echo 'เพิ่มบทความ';
+                            }
+                        }else{
+                            echo 'เพิ่มบทความ';
+                        }
+                                                                            ?> </button></a>
             </div>
             <div class="box-add-blog">
 
@@ -149,7 +159,7 @@ if (isset($_GET['delete_blog_id']) && isset($_GET['lang'])) {
 
             </div>
         </div>
-        <form method="GET">
+        
             <div class="table-responsive">
                 <table class="table">
 
@@ -182,25 +192,18 @@ if (isset($_GET['delete_blog_id']) && isset($_GET['lang'])) {
                                     <td><?= $row_blog["title_blog"] ?></td>
                                     <td><?= $row_blog["created_blog"] ?></td>
 
-                                    <!-- <td>
-                                        <?php
-                                       
-                                        if ($row_blog['status'] == "1") {?>
-                                            <input type="checkbox" name="status" data-toggle="switchbutton" checked data-onstyle="success" data-offstyle="danger" data-style="ios" data-size="sm">
-                                      <?php  } else { ?>
-                                            <input type="checkbox" name="status" data-toggle="switchbutton"  data-onstyle="success" data-offstyle="danger" data-style="ios" data-size="sm">
-                                        <?php }
-                                        ?>
 
 
-                                    </td> -->
-
-                                    <td>
-                                        <a href="<?php if ($lang == "en") {
-                                                        echo "edit_blog_en";
+                                                                     
+                                      <td><a href="<?php if (isset($_GET['lang'])) {
+                                                        if ($_GET['lang'] == "en") {
+                                                            echo "edit_blog_en?";
+                                                        } else {
+                                                            echo "edit_blog?";
+                                                        }
                                                     } else {
-                                                        echo "edit_blog";
-                                                    } ?>?blog_id=<?= $row_blog['id'] ?>"><button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button></a>
+                                                        echo "edit_blog?";
+                                                    } ?>blog_id=<?= $row_blog['id']; ?>"><button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button></a>
                                         <a href="blog?delete_blog_id=<?= $row_blog['id'] ?><?php if ($lang == "en") {
                                                                                                 echo "&lang=en";
                                                                                             } else {
@@ -217,7 +220,7 @@ if (isset($_GET['delete_blog_id']) && isset($_GET['lang'])) {
 
                 </table>
             </div>
-        </form>
+   
         <ul class="pagination justify-content-center mt-5">
             <li <?php if ($page == 1) {
                     echo "class='page-item disabled'";
